@@ -1,5 +1,5 @@
+import React from 'react';
 import './App.scss';
-import { Button } from 'carbon-components-react';
 import { CustomTable } from './components/CustomTable/CustomTable';
 
 function App() {
@@ -22,7 +22,6 @@ function App() {
   ];
   return (
     <div className="App">
-      <Button>Hello</Button>
       <CustomTable rows={rows} />
     </div>
   );

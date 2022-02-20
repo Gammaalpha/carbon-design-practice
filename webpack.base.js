@@ -9,9 +9,9 @@ module.exports = {
       },
     ],
   },
-  externals: {
-    'react': 'React'
-  },
+  // externals: {
+  //   react: 'React'
+  // },
   resolve: {
     extensions: [".js", ".jsx"],
   },

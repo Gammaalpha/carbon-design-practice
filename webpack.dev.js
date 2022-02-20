@@ -1,7 +1,12 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const InterpolateHtmlPlugin = require("interpolate-html-plugin");
 const baseConfig = require("./webpack.base.js");
+const PUBLIC_URL = process.env.PUBLIC_URL || "./";
+console.log(process.env);
+const Dotenv = require("dotenv-webpack");
+
 // const fs = require('fs');
 // const testFolder = path.resolve(__dirname, 'src/scss/');
 // let scssEntryFiles = {}
@@ -14,7 +19,7 @@ const baseConfig = require("./webpack.base.js");
 // });
 const port = 8080;
 
-const config = {
+const config = (env) => ({
   target: "web",
   mode: "development",
   // entry: [
@@ -28,16 +33,12 @@ const config = {
   },
   output: {
     path: path.join(__dirname, "./build"),
-    filename: "js/[name].js",
-    publicPath: `http://localhost:${port}`,
+    publicPath: `http://localhost:${port}/`,
     clean: true,
   },
   devServer: {
     port: port,
-    liveReload: true,
-    // static: {
-    //   directory: path.resolve(__dirname, "./static"),
-    // },
+    liveReload: true
   },
   module: {
     rules: [
@@ -52,11 +53,25 @@ const config = {
     ],
   },
   plugins: [
+    new InterpolateHtmlPlugin({
+      PUBLIC_URL: PUBLIC_URL,
+    }),
+    new Dotenv({
+      path: path.resolve(
+        __dirname,
+        `.env${env.target !== undefined ? `.${env.target}` : ""}`
+      ),
+      allowEmptyValues: true,
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
-      filename: 'index.html'
+      filename: 'index.html',
+      showErrors: true,
+      cache: true,
+      publicPath: '/',
+      favicon: "./public/favicon.ico",
     })
   ],
-};
+});
 
-module.exports = merge(baseConfig, config);
+module.exports = (env) => merge(baseConfig, config(env));
