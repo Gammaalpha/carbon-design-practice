@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Button } from 'carbon-components-react';
+import { CustomTable } from './components/CustomTable/CustomTable';
 
 function App() {
+  const rows = [
+    {
+      id: 'a',
+      name: 'Load balancer 1',
+      status: 'Disabled',
+    },
+    {
+      id: 'b',
+      name: 'Load balancer 2',
+      status: 'Starting',
+    },
+    {
+      id: 'c',
+      name: 'Load balancer 3',
+      status: 'Active',
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button>Hello</Button>
+      <CustomTable rows={rows} />
     </div>
   );
 }
