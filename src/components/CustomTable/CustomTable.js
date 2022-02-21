@@ -9,8 +9,6 @@ import {
     TableBody,
     TableCell,
 } from 'carbon-components-react';
-
-
 const headers = [
     {
         key: 'name',
@@ -21,6 +19,7 @@ const headers = [
         header: 'Status',
     },
 ];
+
 
 export const CustomTable = (props) => {
     const { rows } = props

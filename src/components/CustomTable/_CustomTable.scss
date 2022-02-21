@@ -1,0 +1,5 @@
+@import "carbon-components/scss/globals/scss/vars.scss";
+.bx--data-table tbody tr:hover td {
+  background: $ui-01;
+  color: $text-02;
+}
