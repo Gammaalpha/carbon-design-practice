@@ -1,28 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
-import { CustomTable } from './components/CustomTable/CustomTable';
+import { Button } from "carbon-components-react";
+import { CustomTab } from './components/CustomTab/CustomTab';
 
 function App() {
-  const rows = [
-    {
-      id: 'a',
-      name: 'Load balancer 1',
-      status: 'Disabled',
-    },
-    {
-      id: 'b',
-      name: 'Load balancer 2',
-      status: 'Starting',
-    },
-    {
-      id: 'c',
-      name: 'Load balancer 3',
-      status: 'Active',
-    },
-  ];
+  const [isVisible, setIsVisible] = useState(false)
+  const handleVisibility = () => {
+    setIsVisible(!isVisible)
+  }
   return (
     <div className="App">
-      <CustomTable rows={rows} />
+      <Button onClick={handleVisibility}>TOGGLE</Button>
+      {isVisible && <CustomTab />}
     </div>
   );
 }
