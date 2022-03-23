@@ -10,7 +10,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Button onClick={handleVisibility}>TOGGLE</Button>
+      <Button className="toggle-btn" onClick={handleVisibility}>TOGGLE</Button>
       {isVisible && <CustomTab />}
     </div>
   );
