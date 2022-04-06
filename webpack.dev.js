@@ -43,6 +43,11 @@ const config = (env) => ({
   module: {
     rules: [
       {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+      },
+      {
         test: /\.scss$/,
         use: [
           { loader: "style-loader" },
