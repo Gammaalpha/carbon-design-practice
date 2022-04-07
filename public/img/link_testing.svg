@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="199mm"
+   height="133mm"
+   viewBox="0 0 199 133"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
@@ -25,14 +25,15 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.74029882"
-     inkscape:cx="160.0705"
-     inkscape:cy="561.93525"
+     inkscape:cx="264.08255"
+     inkscape:cy="345.80631"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1-4" />
+     inkscape:current-layer="layer1-4"
+     height="296mm" />
   <defs
      id="defs2" />
   <g
@@ -48,8 +49,9 @@
          xlink:href="https://cloud.ibm.com"
          target="_blank"
          xlink:role="link"
-         transform="translate(28.089012,9.9137691)"
-         xlink:title="circle">
+         transform="matrix(1.8652227,0,0,1.9565817,1.641359,-95.310781)"
+         xlink:title="circle"
+         style="image-rendering:auto">
         <title
            id="title24">Red Circle</title>
         <ellipse
@@ -64,7 +66,7 @@
          id="a131"
          xlink:href="https://www.google.ca"
          target="_blank"
-         transform="translate(-21.892907,-54.52573)"
+         transform="matrix(1.8652227,0,0,1.9565817,-91.228648,-224.60853)"
          xlink:title="square">
         <title
            id="title22">Blue Square</title>
