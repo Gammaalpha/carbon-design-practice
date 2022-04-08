@@ -1,0 +1,57 @@
+svg|a:link,
+svg|a:visited {
+  cursor: pointer;
+}
+
+svg|a text,
+text svg|a {
+  fill: blue;
+  text-decoration: underline;
+}
+
+svg|a:hover,
+svg|a:action {
+  outline: dotted 1px blue;
+}
+
+svg {
+  a[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    font-size: 12pt;
+    top: -100%;
+    left: 0;
+  }
+}
+
+.tooltip-description {
+  pointer-events: none;
+  position: absolute;
+  font-size: 18px;
+  text-align: center;
+  background: rgb(60, 60, 60);
+  padding: 10px 15px;
+  z-index: 99999;
+  min-height: 50px;
+  line-height: 30px;
+  margin: 0 auto;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #eee + transform(translateX(-50%));
+  display: none;
+  &.active {
+    display: block;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+  }
+}
